@@ -15,6 +15,10 @@ group :development, :test do
   gem 'gherkin'
   gem 'cucumber-rails'
   gem 'cucumber'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'autotest-rails'
+  gem 'test_notifier'
   gem 'rspec-rails', '>= 2.0.0.beta.10'
   gem 'awesome_print'
 end

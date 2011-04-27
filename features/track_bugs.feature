@@ -20,5 +20,4 @@ Feature: tracking bugs
 
   # twitter style bug tracker with #hash-tags and following parts of the system
   # i care about?
-
-
+  
