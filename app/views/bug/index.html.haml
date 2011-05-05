@@ -1,0 +1,8 @@
+%h1 All Bugs
+
+%table{:border=>1, :cellspacing=>0}
+  %tr
+    %th Summary
+  -@bugs.each do |bug|
+    %tr
+      %td= bug.summary

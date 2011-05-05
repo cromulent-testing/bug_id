@@ -1,6 +1,8 @@
 BugId::Application.routes.draw do
   resources :bug
-  
+
+  root :to => "bug#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
