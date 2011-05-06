@@ -1,11 +1,11 @@
 %h1 All Bugs
 
 %table{:border=>1, :cellspacing=>0, :cellpadding=>4}
-  %tr
+  %tr.bug
     %th Summary
   -@bugs.each do |bug|
     %tr
-      %td= bug.summary
+      %td.summary= bug.summary
 
 %br
 =link_to 'New Bug', new_bug_path

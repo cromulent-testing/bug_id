@@ -8,7 +8,9 @@ Feature: tracking bugs
   # should be aligned to an epic
   # you dont always need a given when and then
 
+  @javascript
   Scenario: I've found a bug and want to store it
+    Given I'm on the new bugs page
     When I enter the summary "I can't write a summary yet"
     And save it
     Then it should be visible in on the bugs page
