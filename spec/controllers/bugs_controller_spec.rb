@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe BugController do
+describe BugsController do
   context '"GET" index' do
     it 'should display the summary for all bugs' do
       Bug.create :summary => "one"

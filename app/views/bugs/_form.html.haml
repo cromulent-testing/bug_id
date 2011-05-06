@@ -1,0 +1,7 @@
+=form_for(@bug) do |form|
+  .field
+    =form.label :summary
+    %br
+    =form.text_area :summary
+  .actions
+    =form.submit
