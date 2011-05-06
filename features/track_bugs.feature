@@ -15,13 +15,11 @@ Feature: tracking bugs
 
 # twitter style bug tracker with #hash-tags and following parts of the system
 # i care about?
-
   Scenario: I've found a bug and want to store it
     Given I'm on the new bugs page
     When I enter the summary "I can't write a summary yet"
     And save it
     Then it should be visible in on the bugs page
-
 
   Scenario: Should show me an error if i try to submit an empty bug
     Given I'm on the new bugs page
