@@ -1,3 +1,5 @@
+require 'ruby-debug'
+
 Given /^I'm on the new bugs page$/ do
   visit new_bug_path
 end
@@ -12,6 +14,9 @@ When /^save it$/ do
 end
 
 Then /^it should be visible in on the bugs page$/ do
-  #worst test ever!
-  page.should have_content @last_bug_summary
+  all_bugs = page.all :css, 'tr.bug'
+  bug_summaries = all_bugs.map {|a_row| a_row.find(:css, 'td.summary').text}
+  bug_summaries.should include @last_bug_summary
 end
+
+

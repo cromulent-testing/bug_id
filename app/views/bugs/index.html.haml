@@ -1,10 +1,10 @@
 %h1 All Bugs
 
 %table{:border=>1, :cellspacing=>0, :cellpadding=>4}
-  %tr.bug
+  %tr
     %th Summary
   -@bugs.each do |bug|
-    %tr
+    %tr.bug
       %td.summary= bug.summary
 
 %br
