@@ -20,3 +20,11 @@ Then /^it should be visible in on the bugs page$/ do
 end
 
 
+Then /^I should see the error div with "([^\"]*)" error$/ do |error_count|
+  error_explanation = page.find :css, '#error_explanation'
+
+  error_explanation.all(:css, 'ul').count.should equal error_count.to_i
+
+  error_heading = error_explanation.find(:css, 'h2').text
+  error_heading.should include error_count
+end
