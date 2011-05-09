@@ -1,16 +1,10 @@
 class BugsController < ApplicationController
   def index
     @bugs = Bug.all
-    respond_to do |format|
-      format.html
-    end
   end
 
   def new
     @bug = Bug.new
-    respond_to do |format|
-      format.html
-    end
   end
 
   def create
