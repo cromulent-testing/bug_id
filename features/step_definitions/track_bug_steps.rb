@@ -13,7 +13,7 @@ end
 
 When /^save it$/ do
   click_button 'Create Bug'
-  @current_bug = Bug.new
+  @current_bug = Test::Bug.new
   @current_bug.title= @current_bug_title
   @current_bug.summary= @current_bug_summary
 end

@@ -3,8 +3,4 @@ class Bug < ActiveRecord::Base
 
   validates :summary, :presence => true
   validates :title, :presence => true
-
-  def to_s
-    "title: #{title}, summary: #{summary}"
-  end
 end
