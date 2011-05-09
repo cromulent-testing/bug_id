@@ -2,9 +2,11 @@
 
 %table{:border=>1, :cellspacing=>0, :cellpadding=>4}
   %tr
+    %th Title
     %th Summary
   -@bugs.each do |bug|
     %tr.bug
+      %td.title= bug.title
       %td.summary= bug.summary
 
 %br

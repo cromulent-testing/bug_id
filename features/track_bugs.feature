@@ -17,14 +17,16 @@ Feature: tracking bugs
 # i care about?
   Scenario: I've found a bug and want to store it
     Given I'm on the new bugs page
-    When I enter the summary "I can't write a summary yet"
+    When I enter the title "cucumber title"
+    When I enter the summary "cucumber summary"
     And save it
     Then it should be visible in on the bugs page
 
-  Scenario: Should show me an error if i try to submit an empty bug
+  Scenario: Show me an error if I submit an empty bug
     Given I'm on the new bugs page
+    When I enter the title ""
     When I enter the summary ""
     And save it
-    Then I should see the error div with "1" error
+    Then I should see the error div with "2" error
 
   

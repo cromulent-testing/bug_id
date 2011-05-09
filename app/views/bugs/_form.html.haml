@@ -8,6 +8,10 @@
 
 =form_for(@bug) do |form|
   .field
+    =form.label :title
+    %br
+    =form.text_field :title
+  .field
     =form.label :summary
     %br
     =form.text_area :summary
