@@ -1,13 +1,14 @@
 %h1 All Bugs
 
+#notice_explanation
+  =flash[:notice]
+
 %table{:border=>1, :cellspacing=>0, :cellpadding=>4}
   %tr
-    %th Title
     %th Summary
   -@bugs.each do |bug|
     %tr.bug
-      %td.title= bug.title
       %td.summary= bug.summary
 
 %br
-=link_to 'New Bug', new_bug_path
+=link_to 'New Bug', 'Create new bug'

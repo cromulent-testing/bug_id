@@ -11,7 +11,7 @@ class BugsController < ApplicationController
     @bug = Bug.new(params[:bug])
 
     if @bug.save
-      redirect_to(bugs_path, :notice => 'Post was successfully created.')
+      redirect_to(bugs_path, :notice => 'Bug was successfully created.')
     else
       render :action => "new"
     end

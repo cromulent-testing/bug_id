@@ -1,16 +1,12 @@
--if @bug.errors.any?
-  #error_explanation
-    %h2= pluralize(@bug.errors.count, "error")
-    %ul
-      -@bug.errors.full_messages.each do |msg|
-        %li= msg
+-#-if @bug.errors.any?
+-#  #error_explanation
+-#    %h2= pluralize(@bug.errors.count, "error")
+-#    %ul
+-#      -@bug.errors.full_messages.each do |msg|
+-#        %li= msg
 
 
 =form_for(@bug) do |form|
-  .field
-    =form.label :title
-    %br
-    =form.text_field :title
   .field
     =form.label :summary
     %br

@@ -1,6 +1,5 @@
 class Bug < ActiveRecord::Base
-  attr_accessible :summary, :title
+  attr_accessible :summary
 
   validates :summary, :presence => true
-  validates :title, :presence => true
 end

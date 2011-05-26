@@ -10,13 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110509112600) do
+ActiveRecord::Schema.define(:version => 20110427095116) do
 
   create_table "bugs", :force => true do |t|
     t.text     "summary"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "title"
   end
 
 end

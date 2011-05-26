@@ -15,18 +15,64 @@ Feature: tracking bugs
 
 # twitter style bug tracker with #hash-tags and following parts of the system
 # i care about?
+
   Scenario: I've found a bug and want to store it
-    Given I'm on the new bugs page
-    When I enter the title "cucumber title"
-    When I enter the summary "cucumber summary"
-    And save it
-    Then it should be visible in on the bugs page
+    When I create a bug with the summary "my summary"
+  #MB things this is not as clear as 'on the bugs list'
+  #a better test
+  #Then I should see "my summary" on the bugs list
 
-  Scenario: Show me an error if I submit an empty bug
-    Given I'm on the new bugs page
-    When I enter the title ""
-    When I enter the summary ""
-    And save it
-    Then I should see the error div with "2" error
+  #MB/RB we think this is perhaps a step to far
+  #When I create a bug
 
-  
+  #MB - this is better english
+  #Then I should see the bug on the bugs list
+
+  #MB/RB: in the end this is nicer
+    Then the bugs list should have 1 bug
+
+
+  Scenario Outline: Delete a bug
+    Given I have "<bug count>" bug
+    When I delete a bug
+    Then the bugs list should have "<bugs remaining>" bug
+
+  Examples:
+    | bug count | bugs remaining |
+    | 1         | 0              |
+    | 2         | 1              |
+
+#MB/RB:this is an example of merging scenarios
+#  Scenario: delete one of many bugs
+#    Given I have "1" bugs
+#    When I delete bug
+#    Then the bugs list should be empty
+
+#  Scenario: delete one of many bugs
+#    Given I have "2" bugs
+#    When I delete bug
+#    Then the bugs list should have 1 bug
+
+
+  Scenario: update an existing bug
+    Given I have a bug with the summary "my summary"
+    When I change the summary to "blue screen of death"
+    Then the summary for that bug should be "blue screen of death"
+
+
+  Scenario: view all bugs
+    Given I have the following bugs:
+      | summary |
+      | bug 1   |
+      | bug 2   |
+    When I view the bugs list
+    Then I should see the following bugs:
+      | summary |
+      | bug 1   |
+      | bug 2   |
+
+
+# a take away - you don't the first scenario right as writing the others will help you form the right words
+
+# BOUNCE BACK FROM TEST: can we have two bugs with the same summary?
+#Pagination
