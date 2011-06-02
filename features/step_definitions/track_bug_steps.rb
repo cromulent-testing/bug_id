@@ -9,3 +9,16 @@ Then /^the bugs list should have 1 bug$/ do
   #MB/RB adding classes the html to make it easier to test
   all('td.summary').count.should == 1
 end
+
+Given /^I have "([^\"]*)" bug$/ do |number_of_bugs|
+  user = User.new
+  user.create_bugs number_of_bugs
+end
+
+When /^I delete a bug$/ do
+
+end
+
+Then /^the bugs list should have "([^\"]*)" bug$/ do |expected_bug_count|
+  Bug.count.should == expected_bug_count
+end

@@ -1,9 +1,13 @@
 module Test
   class Bug
-    attr_accessor :summary, :title
+    attr_accessor :summary
+
+    def default
+      @summary = 'this is a summary'
+    end
 
     def to_s
-      "title: #{title}, summary: #{summary}"
+      "summary: #{summary}"
     end
   end
 end

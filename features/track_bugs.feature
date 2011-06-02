@@ -31,7 +31,6 @@ Feature: tracking bugs
   #MB/RB: in the end this is nicer
     Then the bugs list should have 1 bug
 
-
   Scenario Outline: Delete a bug
     Given I have "<bug count>" bug
     When I delete a bug
@@ -43,7 +42,7 @@ Feature: tracking bugs
     | 2         | 1              |
 
 #MB/RB:this is an example of merging scenarios
-#  Scenario: delete one of many bugs
+#  Scenario: delete the only bug
 #    Given I have "1" bugs
 #    When I delete bug
 #    Then the bugs list should be empty
