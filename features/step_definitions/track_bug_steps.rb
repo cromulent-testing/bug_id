@@ -11,12 +11,11 @@ Then /^the bugs list should have 1 bug$/ do
 end
 
 Given /^I have "([^\"]*)" bug$/ do |number_of_bugs|
-  user = User.new
-  user.create_bugs number_of_bugs
+  Data::create_bugs number_of_bugs
 end
 
 When /^I delete a bug$/ do
-
+  #User.create_bug
 end
 
 Then /^the bugs list should have "([^\"]*)" bug$/ do |expected_bug_count|

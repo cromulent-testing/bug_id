@@ -16,8 +16,8 @@ Feature: tracking bugs
 # twitter style bug tracker with #hash-tags and following parts of the system
 # i care about?
 
+
   Scenario: I've found a bug and want to store it
-    When I create a bug with the summary "my summary"
   #MB things this is not as clear as 'on the bugs list'
   #a better test
   #Then I should see "my summary" on the bugs list
@@ -29,6 +29,7 @@ Feature: tracking bugs
   #Then I should see the bug on the bugs list
 
   #MB/RB: in the end this is nicer
+    When I create a bug with the summary "my summary"
     Then the bugs list should have 1 bug
 
   Scenario Outline: Delete a bug
@@ -38,8 +39,8 @@ Feature: tracking bugs
 
   Examples:
     | bug count | bugs remaining |
-    | 1         | 0              |
-    | 2         | 1              |
+    | 1        | 0              |
+    | 2        | 1              |
 
 #MB/RB:this is an example of merging scenarios
 #  Scenario: delete the only bug
