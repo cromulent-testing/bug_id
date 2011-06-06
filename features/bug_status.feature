@@ -1,7 +1,7 @@
 Feature: Every bug has a status
   In order to remember what has happened to a bug
-  As a tester
-  I want to assign them a status
+  As someone interested in the bug
+  I want them to have a status
 
   Scenario: Bugs have a status that defaults to open
     Given I'm creating a bug
@@ -17,4 +17,5 @@ Feature: Every bug has a status
       | summary    | status |
       | open bug   | open   |
       | closed bug | closed |
+
 
