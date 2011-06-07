@@ -11,5 +11,10 @@
     =form.label :summary
     %br
     =form.text_area :summary
+  .field
+    =form.label :status
+    %br
+    -#=form.collection_select(:status_id, Status.all, :id , :status,{ :selected => @bug.status_id })
+    =form.collection_select(:status_id, Status.all, :id , :status)
   .actions
     =form.submit

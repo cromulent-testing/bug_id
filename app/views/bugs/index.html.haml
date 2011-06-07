@@ -3,9 +3,10 @@
 %table{:border=>1, :cellspacing=>0, :cellpadding=>4}
   %tr
     %th Summary
+    %th Status
   -@bugs.each do |bug|
     %tr.bug
       %td.summary= bug.summary
-
+      %td.status= bug.status.status unless bug.status.nil?
 %br
 =link_to 'New Bug', new_bug_path

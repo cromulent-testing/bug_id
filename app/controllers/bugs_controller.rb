@@ -4,7 +4,7 @@ class BugsController < ApplicationController
   end
 
   def new
-    @bug = Bug.new
+    @bug = Bug.new(:status_id => 2)
   end
 
   def create
