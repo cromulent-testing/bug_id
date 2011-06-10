@@ -24,5 +24,6 @@ group :development, :test do
   gem 'rspec-rails', '>= 2.0.0.beta.10'
   gem 'awesome_print'
   gem 'ruby-debug'
-
+  gem 'machinist'
+  gem 'faker'
 end
