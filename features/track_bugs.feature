@@ -33,14 +33,14 @@ Feature: tracking bugs
     Then the bugs list should have 1 bug
 
   Scenario Outline: Delete a bug
-    Given I have "<bug count>" bug
+    Given I have "<Bug count>" bug
     When I delete a bug
-    Then the bugs list should have "<bugs remaining>" bug
+    Then the bugs list should have "<Bugs remaining>" bug
 
   Examples:
-    | bug count | bugs remaining |
-    | 1        | 0              |
-    | 2        | 1              |
+    | Bug count | Bugs remaining |
+    | 1         | 0              |
+    | 2         | 1              |
 
 #MB/RB:this is an example of merging scenarios
 #  Scenario: delete the only bug
@@ -62,12 +62,12 @@ Feature: tracking bugs
 
   Scenario: view all bugs
     Given I have the following bugs:
-      | summary |
+      | Summary |
       | bug 1   |
       | bug 2   |
     When I view the bugs list
     Then I should see the following bugs:
-      | summary |
+      | Summary |
       | bug 1   |
       | bug 2   |
 

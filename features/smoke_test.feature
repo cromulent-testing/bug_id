@@ -1,13 +1,19 @@
 @javascript
 Feature: End to end flows via the front end
 
-  Scenario: Create a bug
-    When I create a bug:
-      | summary                    | status |
-      | closed -end to end summary | close  |
-      | open -end to end summary   | open   |
-
+  Scenario: Create some bugs
+    When I create the bugs:
+      | Label  | Summary                    | Status |
+      | first  | closed -end to end summary | Closed |
+      | second | open -end to end summary   | Open   |
     Then the bug list should be:
-      | summary                    | status |
-      | open -end to end summary   | open   |
-      | closed -end to end summary | close  |
+      | Summary                    | Status |
+      | open -end to end summary   | Open   |
+      | closed -end to end summary | Closed |
+    When I update "second" to be
+      | Summary     | Status |
+      | new summary | close  |
+    Then the bug list should be:
+      | Summary                    | Status |
+      | new summary                | Closed |
+      | closed -end to end summary | Closed |

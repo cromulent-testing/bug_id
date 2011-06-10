@@ -1,4 +1,6 @@
-%h1 All Bugs
+=render :partial => 'layouts/header'
+
+%h2 All Bugs
 
 %table{:border=>1, :cellspacing=>0, :cellpadding=>4}
   %tr
@@ -7,6 +9,6 @@
   -@bugs.each do |bug|
     %tr.bug
       %td.summary= bug.summary
-      %td.status= bug.status.status unless bug.status.nil?
+      %td.status= bug.status.name unless bug.status.nil?
 %br
 =link_to 'New Bug', new_bug_path

@@ -8,13 +8,18 @@ Feature: Every bug has a status
     Then I the statuses available to me are "open, closed"
     And the default status status is "open"
 
+  Scenario: Bugs can be closed
+    Given I have the bug "status-test" with the status "open"
+    When I close "status-test"
+    Then the status for "status-test" is closed"
+
   Scenario: Closed bugs appear at the bottom of the bug list
     Given I have the following bugs:
-      | summary    | status |
+      | Summary    | Status |
       | closed bug | closed |
       | open bug   | open   |
     Then the bug list should be:
-      | summary    | status |
+      | Summary    | Status |
       | open bug   | open   |
       | closed bug | closed |
 
