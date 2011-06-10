@@ -15,11 +15,11 @@ Feature: Every bug has a status
 
   Scenario: Closed bugs appear at the bottom of the bug list
     Given I have the following bugs:
-      | Summary    | Status |
+      | Description    | Status |
       | closed bug | closed |
       | open bug   | open   |
     Then the bug list should be:
-      | Summary    | Status |
+      | Description    | Status |
       | open bug   | open   |
       | closed bug | closed |
 

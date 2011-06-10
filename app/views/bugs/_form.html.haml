@@ -1,11 +1,11 @@
 =form_for(@bug) do |form|
   .field
-    =form.label :summary
+    =form.label :description
     %br
-    =form.text_area :summary
+    =form.text_area :description
   .field
-    =form.label :status_id
+    =form.label :status
     %br
-    =form.collection_select(:status_id, Status.all, :id , :name)
+    =form.select(:status, Bug::STATUS)
   .actions
     =form.submit

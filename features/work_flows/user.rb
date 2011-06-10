@@ -6,7 +6,7 @@ class User
 
   def create_bug bug
     @world.visit @world.new_bug_path
-    @world.fill_in 'Summary', :with => bug.summary
+    @world.fill_in 'Description', :with => bug.description
     @world.select bug.status, :from => 'Status'
     @world.click_button 'Create Bug'
   end
@@ -19,7 +19,7 @@ class User
       bugs_table_rows = @world.all('tr.bug')
       bugs_table_rows.each do | bug_row |
         bug = Test::Bug.new
-        bug.summary = bug_row.find('td.summary').text
+        bug.summary = bug_row.find('td.description').text
         bug.status = bug_row.find('td.status').text
         bug_list.push bug
       end

@@ -1,8 +1,8 @@
 class CreateBugs < ActiveRecord::Migration
   def self.up
     create_table :bugs do |t|
-      t.text :summary
-      t.integer :status_id
+      t.text :description
+      t.string :status
       t.timestamps
     end
   end

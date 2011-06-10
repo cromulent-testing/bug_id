@@ -5,7 +5,8 @@ class Data
     bug_model.default
 
     bug = Bug.new
-    bug.summary = bug_model.summary
+    bug.description = bug_model.description
+    bug.status = bug_model.status
     bug.save
   end
 

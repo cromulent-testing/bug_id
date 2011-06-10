@@ -1,8 +1,9 @@
 class Bug < ActiveRecord::Base
-  attr_accessible :summary, :status_id
+  attr_accessible :description, :status
+  STATUS = ['Open', 'Closed']
 
-  validates :summary, :presence => true
+  validates :description, :presence => true
 
-  belongs_to :status
-  validates_associated :status
+  validates :status, :presence => true
+  validates_inclusion_of :status, :in => STATUS
 end

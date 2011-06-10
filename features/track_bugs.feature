@@ -56,18 +56,18 @@ Feature: tracking bugs
 
   Scenario: update an existing bug
     Given I have a bug with the summary "my summary"
-    When I change the summary to "blue screen of death"
-    Then the summary for that bug should be "blue screen of death"
+    When I change the description to "blue screen of death"
+    Then the description for that bug should be "blue screen of death"
 
 
   Scenario: view all bugs
     Given I have the following bugs:
-      | Summary |
+      | Description |
       | bug 1   |
       | bug 2   |
     When I view the bugs list
     Then I should see the following bugs:
-      | Summary |
+      | Description |
       | bug 1   |
       | bug 2   |
 
