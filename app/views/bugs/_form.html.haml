@@ -4,9 +4,8 @@
     %br
     =form.text_area :summary
   .field
-    =form.label :status
+    =form.label :status_id
     %br
-    -#=form.collection_select(:status_id, Status.all, :id , :status,{ :selected => @bug.status_id })
-    =form.collection_select(:status, Status.all, :id , :name)
+    =form.collection_select(:status_id, Status.all, :id , :name)
   .actions
     =form.submit

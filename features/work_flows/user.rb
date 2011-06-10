@@ -11,4 +11,20 @@ class User
     @world.click_button 'Create Bug'
   end
 
+  def check_bug_list
+    bug_list = []
+    @world.visit @world.bugs_path
+
+    @world.within 'table.bugs' do
+      bug = Test::Bug.new
+      bugs_table_rows = @world.all('tr.bug')
+      bugs_table_rows.each do | bug_row |
+        bug.summary = bug_row.find('td.summary').text
+        bug.status = bug_row.find('td.status').text
+        bug_list.push bug
+      end
+    end
+    bug_list
+  end
+
 end
