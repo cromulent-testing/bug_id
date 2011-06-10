@@ -1,6 +1,6 @@
-When /^I create a bug with the summary "([^\"]*)"$/ do |summary|
+When /^I create a bug with the description "([^\"]*)"$/ do |description|
   visit new_bug_path
-  fill_in 'Summary', :with => summary
+  fill_in 'Description', :with => description
   click_button 'Create Bug'
 end
 

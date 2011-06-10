@@ -2,7 +2,6 @@ When /^I create the bugs:$/ do |bugs_table|
   bugs_table.hashes.each do |bug_hash|
     bug = Test::Bug.new bug_hash
     user.create_bug bug
-    sleep 5
   end
 end
 
@@ -14,5 +13,9 @@ Then /^the bug list should be:$/ do |expected_bugs_table|
     expected_bug_list.push Test::Bug.new bug_hash
   end
 
-  actual_bugs_list.should == expected_bug_list
+  actual_bugs_list.length.times do |x|
+    actual_bugs_list[x].description.should == expected_bug_list[x].description
+    actual_bugs_list[x].status.should == expected_bug_list[x].status
+  end
+
 end

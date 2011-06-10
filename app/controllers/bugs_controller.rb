@@ -1,6 +1,6 @@
 class BugsController < ApplicationController
   def index
-    @bugs = Bug.all
+    @bugs = Bug.all.sort_by(&:status).reverse
   end
 
   def new

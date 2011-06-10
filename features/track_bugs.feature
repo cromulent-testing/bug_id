@@ -29,7 +29,7 @@ Feature: tracking bugs
   #Then I should see the bug on the bugs list
 
   #MB/RB: in the end this is nicer
-    When I create a bug with the summary "my summary"
+    When I create a bug with the description "my description"
     Then the bugs list should have 1 bug
 
   Scenario Outline: Delete a bug
@@ -39,8 +39,8 @@ Feature: tracking bugs
 
   Examples:
     | Bug count | Bugs remaining |
-    | 1         | 0              |
-    | 2         | 1              |
+    | 1        | 0             |
+    | 2        | 1             |
 
 #MB/RB:this is an example of merging scenarios
 #  Scenario: delete the only bug
@@ -55,7 +55,7 @@ Feature: tracking bugs
 
 
   Scenario: update an existing bug
-    Given I have a bug with the summary "my summary"
+    Given I have a bug with the description "my description"
     When I change the description to "blue screen of death"
     Then the description for that bug should be "blue screen of death"
 
@@ -63,13 +63,13 @@ Feature: tracking bugs
   Scenario: view all bugs
     Given I have the following bugs:
       | Description |
-      | bug 1   |
-      | bug 2   |
+      | bug 1       |
+      | bug 2       |
     When I view the bugs list
     Then I should see the following bugs:
       | Description |
-      | bug 1   |
-      | bug 2   |
+      | bug 1       |
+      | bug 2       |
 
 
 # a take away - you don't the first scenario right as writing the others will help you form the right words

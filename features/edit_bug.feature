@@ -5,11 +5,11 @@ Feature: Bugs can be edited
 
   Scenario: I update a bug
     Given I have the bug "old"
-      | Summary       | Status |
+      | Description   | Status |
       | old/wrong bug | open   |
     When I update "old" to be
-      | Summary  | Status |
-      | accurate | closed |
+      | Description | Status |
+      | accurate    | closed |
     Then the bug "old" will be
-      | Summary  | Status |
-      | accurate | closed |
+      | Description | Status |
+      | accurate    | closed |

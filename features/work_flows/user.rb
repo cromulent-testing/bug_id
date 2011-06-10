@@ -19,7 +19,7 @@ class User
       bugs_table_rows = @world.all('tr.bug')
       bugs_table_rows.each do | bug_row |
         bug = Test::Bug.new
-        bug.summary = bug_row.find('td.description').text
+        bug.description = bug_row.find('td.description').text
         bug.status = bug_row.find('td.status').text
         bug_list.push bug
       end
