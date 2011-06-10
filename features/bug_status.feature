@@ -1,11 +1,11 @@
-Feature: Every bug has a status
+Feature: Bug Status
   In order to remember what has happened to a bug
   As someone interested in the bug
   I want them to have a status
 
   Scenario: Bugs have a status that defaults to open
     Given I'm creating a bug
-    Then I the statuses available to me are "open, closed"
+    Then I the statuses available to me are "Open, Closed"
     And the default status status is "open"
 
   Scenario: Bugs can be closed

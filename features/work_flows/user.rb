@@ -1,23 +1,20 @@
-class User
+module User
 
-  def initialize world
-    @world = world
+  def user_create_bug bug
+    visit new_bug_path
+    fill_in 'Description', :with => bug.description
+    select bug.status, :from => 'Status'
+    click_button 'Create Bug'
+    Bug.last.id
   end
 
-  def create_bug bug
-    @world.visit @world.new_bug_path
-    @world.fill_in 'Description', :with => bug.description
-    @world.select bug.status, :from => 'Status'
-    @world.click_button 'Create Bug'
-  end
-
-  def check_bug_list
+  def user_check_bug_list
     bug_list = []
-    @world.visit @world.bugs_path
+    visit bugs_path
 
-    @world.within 'table.bugs' do
-      bugs_table_rows = @world.all('tr.bug')
-      bugs_table_rows.each do | bug_row |
+    within 'table.bugs' do
+      bugs_table_rows = all('tr.bug')
+      bugs_table_rows.each do |bug_row|
         bug = Test::Bug.new
         bug.description = bug_row.find('td.description').text
         bug.status = bug_row.find('td.status').text

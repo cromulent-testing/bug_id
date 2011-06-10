@@ -1,6 +1,6 @@
 module Test
   class Bug
-    attr_accessor :description, :status
+    attr_accessor :id, :description, :status
     
     def initialize bug_hash = {'Description' => '', 'Status' => ''}
       @description = bug_hash['Description']

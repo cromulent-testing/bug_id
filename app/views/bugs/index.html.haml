@@ -4,10 +4,12 @@
 
 %table.bugs{:border=>1, :cellspacing=>0, :cellpadding=>4}
   %tr
-    %th description
+    %th ID
+    %th Description
     %th Status
   -@bugs.each do |bug|
     %tr.bug
+      %td.id= bug.id
       %td.description= bug.description
       %td.status= bug.status
 %br
