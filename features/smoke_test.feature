@@ -1,3 +1,4 @@
+@javascript
 Feature: End to end flows via the front end
 
   Scenario: Create some bugs

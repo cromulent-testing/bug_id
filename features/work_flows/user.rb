@@ -16,9 +16,9 @@ class User
     @world.visit @world.bugs_path
 
     @world.within 'table.bugs' do
-      bug = Test::Bug.new
       bugs_table_rows = @world.all('tr.bug')
       bugs_table_rows.each do | bug_row |
+        bug = Test::Bug.new
         bug.summary = bug_row.find('td.summary').text
         bug.status = bug_row.find('td.status').text
         bug_list.push bug
