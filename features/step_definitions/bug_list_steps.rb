@@ -11,13 +11,9 @@ Then /^the bug list should be:$/ do |expected_bugs_table|
   expected_bug_list =[]
 
   expected_bugs_table.hashes.each do |bug_hash|
-    expected_bug_list.push Test::Bug.new bug_hash
+    expected_bug_list.push bug_hash
   end
-
-  actual_bugs_list.length.times do |x|
-    actual_bugs_list[x].description.should == expected_bug_list[x].description
-    actual_bugs_list[x].status.should == expected_bug_list[x].status
-  end
+  actual_bugs_list.should == expected_bug_list
 end
 
 Then /^the bugs list should have "([^\"]*)" bug$/ do |expected_bug_count|
