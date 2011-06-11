@@ -14,4 +14,9 @@ module BugListComponent
     end
     bug_list
   end
+
+  def bug_count
+    visit bugs_path
+    all 'tr.bug'.size
+  end
 end

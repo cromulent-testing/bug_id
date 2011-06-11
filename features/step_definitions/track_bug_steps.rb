@@ -1,3 +1,4 @@
+#todo: remove this old stuff
 When /^I create a bug with the description "([^\"]*)"$/ do |description|
   visit new_bug_path
   fill_in 'Description', :with => description
@@ -11,7 +12,7 @@ Then /^the bugs list should have 1 bug$/ do
 end
 
 Given /^I have "([^\"]*)" bug$/ do |number_of_bugs|
-  Data::create_bugs number_of_bugs
+  Data::create_default_bugs number_of_bugs
 end
 
 When /^I delete a bug$/ do
@@ -19,5 +20,5 @@ When /^I delete a bug$/ do
 end
 
 Then /^the bugs list should have "([^\"]*)" bug$/ do |expected_bug_count|
-  Bug.count.should == expected_bug_count
+  bug_count == expected_bug_count
 end
