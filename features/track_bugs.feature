@@ -31,7 +31,7 @@ Feature: Track Bugs
     When I create the bug:
       | Description      | Status |
       | Test description | Open   |
-    Then the bugs list should have 1 bug
+    Then the bugs list should have "1" bug
 
 #MB/RB:this is an example of merging scenarios
 #  Scenario: delete the only bug

@@ -16,7 +16,7 @@ module BugListComponent
   end
 
   def bug_count
-    visit bugs_path
-    all 'tr.bug'.size
+    visit bugs_path unless current_path == bugs_path
+    all('tr.bug').size.to_s
   end
 end
