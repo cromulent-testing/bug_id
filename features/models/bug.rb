@@ -8,5 +8,11 @@ module Test
       @status = bug_hash['Status']
     end
 
+    def default bug_hash = {'Id' => 0, 'Description' => '', 'Status' => ''}
+      @id = bug_hash['Id'] || 0
+      @description = bug_hash['Description'] || 'Default Description'
+      @status = bug_hash['Status'] || 'Open Description'
+    end
+
   end
 end

@@ -16,7 +16,7 @@ end
 
 When /^I update the bug to be:$/ do |bug_updates|
   bug_updates.hashes.each do |bug_hash|
-    label = bug_hash.delete 'Label'
+    label = bug_hash.delete 'Label' || 'test-bug'
     bug_update @test_bugs[label], bug_hash
   end
 end

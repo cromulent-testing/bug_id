@@ -14,13 +14,14 @@ class Data
   def self.create_bugs bug_table
     created_bugs = Hash.new
     bug_table.hashes.each do |bug_hash|
-      make_me = {}
-      make_me[:description] = bug_hash['Description'] if bug_hash['Description']
-      make_me[:status] = bug_hash['Status'] if bug_hash['Status']
+      bug_hash.keys.each do |key|
+        bug_hash[key.downcase] = bug_hash.delete key
+      end
 
-      Bug.make make_me
+      label = bug_hash.delete 'label' || 'test-bug'
+      Bug.make bug_hash
 
-      created_bugs[bug_hash['Label']] = Bug.last.id
+      created_bugs[label] = Bug.last.id
     end
     created_bugs
   end
