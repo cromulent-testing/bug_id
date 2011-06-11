@@ -3,7 +3,7 @@
 # should be aligned to an epic
 # you dont always need a given when and then
 
-Feature: tracking bugs
+Feature: Track Bugs
   In order to remember issues I've found
   As a tester
   I want to store them in an accessible place
@@ -15,7 +15,6 @@ Feature: tracking bugs
 
 # twitter style bug tracker with #hash-tags and following parts of the system
 # i care about?
-
 
   Scenario: I've found a bug and want to store it
   #MB things this is not as clear as 'on the bugs list'
@@ -29,7 +28,9 @@ Feature: tracking bugs
   #Then I should see the bug on the bugs list
 
   #MB/RB: in the end this is nicer
-    When I create a bug with the description "my description"
+    When I create the bug:
+      | Description      | Status |
+      | Test description | Open   |
     Then the bugs list should have 1 bug
 
 #MB/RB:this is an example of merging scenarios
@@ -42,7 +43,6 @@ Feature: tracking bugs
 #    Given I have "2" bugs
 #    When I delete bug
 #    Then the bugs list should have 1 bug
-
 
   Scenario: view all bugs
     Given I have the bugs:

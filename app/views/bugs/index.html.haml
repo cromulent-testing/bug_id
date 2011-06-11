@@ -7,7 +7,7 @@
     %th Status
     %th
   -@bugs.each do |bug|
-    %tr{:index =>"bug-#{bug.id}"}
+    %tr{:index =>"bug-#{bug.id}", :class => 'bug'}
       %td.id= bug.id
       %td.description= bug.description
       %td.status= bug.status

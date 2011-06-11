@@ -1,9 +1,8 @@
-Feature: Bugs can be edited
+Feature: Edit Bug
   In order to update a bug with what has happened
   As someone interested in the bug
   I want to edit them
 
-  @javascript
   Scenario: I update a bug
     Given I have the bug:
       | Label | Description   | Status |

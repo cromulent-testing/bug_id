@@ -1,7 +1,8 @@
 class Data
 
-  def self.create_bug
-    Bug.make
+  def self.create_bug options_hash
+    Bug.make options_hash
+    Bug.last.id
   end
 
   def self.create_bugs bug_table
@@ -13,7 +14,7 @@ class Data
 
       Bug.make make_me
 
-      created_bugs[bug_hash['Label']] = Bug.last
+      created_bugs[bug_hash['Label']] = Bug.last.id
     end
     created_bugs
   end
