@@ -1,10 +1,8 @@
 When /^I create the bugs:$/ do |bugs_table|
   bugs_table.hashes.each do |bug_hash|
-    bug = Test::Bug.new bug_hash
+    bug_id = user_create_bug bug_hash
 
-    @test_bugs = Hash.new
-    bug.id = user_create_bug bug
-    @test_bugs[bug_hash['Label']] = bug
+    @test_bugs[bug_hash['Label']] = bug_id
   end
 end
 
@@ -30,7 +28,10 @@ Then /^I the statuses available to me are "([^\"]*)"$/ do |expected_statuses|
   pending
 end
 
-When /^I update "([^\"]*)" to be$/ do |bug_label, bug_updates|
-  puts @test_bugs[bug_label].inspect
-  pending
+When /^I update the bug to be:$/ do |bug_updates|
+  bug_updates.hashes.each do |bug_hash|
+    label = bug_hash['Label']
+    original_bug = @test_bugs[label]
+    user_update_bug original_bug.id, bug_hash
+  end
 end

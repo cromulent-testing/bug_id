@@ -1,5 +1,3 @@
-=render :partial => 'layouts/header'
-
 %h2 All Bugs
 
 %table.bugs{:border=>1, :cellspacing=>0, :cellpadding=>4}
@@ -7,10 +5,12 @@
     %th ID
     %th Description
     %th Status
+    %th
   -@bugs.each do |bug|
     %tr.bug
       %td.id= bug.id
       %td.description= bug.description
       %td.status= bug.status
+      %td.edit= link_to 'Edit', edit_bug_path(bug)
 %br
 =link_to 'New Bug', new_bug_path

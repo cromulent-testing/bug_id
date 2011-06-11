@@ -1,16 +1,12 @@
 module Test
   class Bug
     attr_accessor :id, :description, :status
-    
-    def initialize bug_hash = {'Description' => '', 'Status' => ''}
+
+    def initialize bug_hash = {'Id' => 0, 'Description' => '', 'Status' => ''}
+      @id = bug_hash['Id']
       @description = bug_hash['Description']
       @status = bug_hash['Status']
     end
-    
-    def default
-      @description = 'Default Description'
-      @status = 'Open'
-      self
-    end
+
   end
 end

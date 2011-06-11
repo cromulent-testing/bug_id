@@ -17,4 +17,17 @@ class BugsController < ApplicationController
     end
   end
 
+  def edit
+    @bug = Bug.find(params[:id])
+  end
+
+  def update
+    @bug = Bug.find(params[:id])
+
+    respond_to do |format|
+      if @bug.update_attributes(params[:bug])
+        format.html { redirect_to(bugs_path, :notice => 'Post was successfully updated.') }
+      end
+    end
+  end
 end
