@@ -32,16 +32,6 @@ Feature: tracking bugs
     When I create a bug with the description "my description"
     Then the bugs list should have 1 bug
 
-  Scenario Outline: Delete a bug
-    Given I have "<Bug count>" bug
-    When I delete a bug
-    Then the bugs list should have "<Bugs remaining>" bug
-
-  Examples:
-    | Bug count | Bugs remaining |
-    | 1        | 0             |
-    | 2        | 1             |
-
 #MB/RB:this is an example of merging scenarios
 #  Scenario: delete the only bug
 #    Given I have "1" bugs
@@ -54,22 +44,16 @@ Feature: tracking bugs
 #    Then the bugs list should have 1 bug
 
 
-  Scenario: update an existing bug
-    Given I have a bug with the description "my description"
-    When I change the description to "blue screen of death"
-    Then the description for that bug should be "blue screen of death"
-
-
   Scenario: view all bugs
-    Given I have the following bugs:
-      | Description |
-      | bug 1       |
-      | bug 2       |
+    Given I have the bugs:
+      | Description | Status |
+      | bug 1       | Open   |
+      | bug 2       | Closed |
     When I view the bugs list
-    Then I should see the following bugs:
-      | Description |
-      | bug 1       |
-      | bug 2       |
+    Then the bug list should be:
+      | Description | Status |
+      | bug 1       | Open   |
+      | bug 2       | Closed |
 
 
 # a take away - you don't the first scenario right as writing the others will help you form the right words

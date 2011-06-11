@@ -6,7 +6,7 @@ Feature: Bug Status
   Scenario: Bugs have a status that defaults to open
     Given I'm creating a bug
     Then I the statuses available to me are "Open, Closed"
-    And the default status status is "open"
+    And the default status status is "Open"
 
   Scenario: Bugs can be closed
     Given I have the bug "status-test" with the status "open"
