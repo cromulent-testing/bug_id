@@ -5,7 +5,7 @@ module BugComponent
   end
 
   def bug_update bug_id, bug_hash
-    visit edit_bug_path(bug_id)
+    visit edit_bug_path(bug_id) unless current_path == edit_bug_path(bug_id)
     bug_fill_in_details(bug_hash)
   end
 
