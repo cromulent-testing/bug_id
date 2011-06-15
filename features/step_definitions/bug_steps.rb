@@ -25,13 +25,13 @@ When /^the default status status is "([^\"]*)"$/ do |expected_status|
   bug_get_selected_status.should == expected_status
 end
 
-When /^I close "([^\"]*)"$/ do |bug_label|
+When /^I close the bug "([^\"]*)"$/ do |bug_label|
   bug_close @test_bugs[bug_label]
 end
 
 ####################################### Then #######################################
 
-Then /^I the statuses available to me are "([^\"]*)"$/ do |expected_statuses|
+Then /^the statuses available to me are "([^\"]*)"$/ do |expected_statuses|
   expected_statuses = expected_statuses.split(',').each{|s| s.strip!}
   bug_get_available_statues.should == expected_statuses
 end

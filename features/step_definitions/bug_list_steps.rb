@@ -6,7 +6,7 @@ end
 
 ####################################### Then #######################################
 
-Then /^the bug list should be:$/ do |expected_bugs_table|
+Then /^the bug list should be in the following order:$/ do |expected_bugs_table|
   actual_bugs_list = bug_list
   expected_bug_list =[]
 

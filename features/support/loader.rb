@@ -11,4 +11,3 @@ World BugListComponent
 World DataComponent
 
 Before { @test_bugs = Hash.new }
-

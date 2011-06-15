@@ -5,12 +5,12 @@ Feature: Bug Status
 
   Scenario: Bugs have a status that defaults to open
     Given I'm creating a bug
-    Then I the statuses available to me are "Open, Closed"
+    Then the statuses available to me are "Open, Closed"
     And the default status status is "Open"
 
   Scenario: Bugs can be closed
     Given I have the bug "status-test" with the status "Open"
-    When I close "status-test"
+    When I close the bug "status-test"
     Then the status for "status-test" is "Closed"
 
   Scenario: Closed bugs appear at the bottom of the bug list
@@ -18,7 +18,7 @@ Feature: Bug Status
       | Description | Status |
       | closed bug  | Closed |
       | open bug    | Open   |
-    Then the bug list should be:
+    Then the bug list should be in the following order:
       | Description | Status |
       | open bug    | Open   |
       | closed bug  | Closed |

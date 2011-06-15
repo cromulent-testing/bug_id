@@ -10,6 +10,6 @@ Feature: Edit Bug
     When I update the bug to be:
       | Label | Description | Status |
       | Old   | accurate    | Closed |
-    Then the bug list should be:
+    Then the bug list should be in the following order:
       | Description | Status |
       | accurate    | Closed |

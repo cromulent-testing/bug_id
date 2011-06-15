@@ -50,7 +50,7 @@ Feature: Track Bugs
       | bug 1       | Open   |
       | bug 2       | Closed |
     When I view the bugs list
-    Then the bug list should be:
+    Then the bug list should be in the following order:
       | Description | Status |
       | bug 1       | Open   |
       | bug 2       | Closed |
